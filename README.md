@@ -1,1 +1,1268 @@
-# emodul-Interaktif-
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAH KEDIRI NGULIK LEGENDA LEMBU SURO</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                            950: '#431407'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff7ed;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ea580c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c2410c;
+        }
+        .nav-card {
+            transition: all 0.25s ease;
+        }
+        .nav-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-[#fffbf7] text-slate-900 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-orange-600 selection:text-white">
+
+    <header class="bg-gradient-to-r from-orange-800 via-orange-600 to-amber-700 text-white shadow-2xl sticky top-0 z-50 border-b-4 border-amber-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3.5 cursor-pointer" onclick="switchTab('beranda')">
+                <div class="w-12 h-12 rounded-2xl bg-white/25 border-2 border-white overflow-hidden flex items-center justify-center shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=150&auto=format&fit=crop&q=80" onerror="this.src='https://placehold.co/100x100/ea580c/ffffff?text=🐃'" class="w-full h-full object-cover" alt="Avatar">
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-black tracking-wide drop-shadow text-amber-100">CAH KEDIRI NGULIK LEGENDA LEMBU SURO</h1>
+                    <p class="text-xs text-orange-100 font-bold">E-Modul Interaktif Budaya Nusantara • Belajar Berurutan</p>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-3">
+                <div class="bg-black/40 px-3.5 py-1.5 rounded-2xl border border-white/30 text-xs font-black text-amber-200 shadow-inner">
+                    <i class="fa-solid fa-users mr-1"></i> Pengunjung: <span id="visitorCount">3,120</span>
+                </div>
+                <a id="headerWaBtn" href="https://wa.me/6281234567890?text=Halo%20Kak,%20saya%20ingin%20konsultasi%20materi%20E-Modul%20Lembu%20Suro." target="_blank" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl text-xs shadow-lg transition-all flex items-center space-x-1.5 border border-emerald-400">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> <span>Konsultasi WA</span>
+                </a>
+                <button onclick="switchTab('editor')" class="px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-amber-950 font-black rounded-2xl text-xs shadow-lg transition-all flex items-center space-x-1.5 border border-amber-300">
+                    <i class="fa-solid fa-gear"></i> <span>Editor</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="bg-white/95 backdrop-blur-md border-b-2 border-orange-200 shadow-md overflow-x-auto">
+            <div id="navTabsContainer" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex space-x-2 sm:space-x-3 min-w-max items-center justify-center">
+                <!-- Tabs rendered dynamically -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- VIEW: BERANDA / ABSEN AWAL -->
+        <div id="view-beranda" class="space-y-10">
+            <div class="text-center space-y-6 bg-white p-8 sm:p-12 rounded-3xl border-2 border-orange-300 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none text-9xl">🐃</div>
+                
+                <div class="flex justify-center items-center space-x-6">
+                    <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-3xl bg-orange-100 border-4 border-orange-600 overflow-hidden shadow-2xl flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&auto=format&fit=crop&q=80" onerror="this.src='https://placehold.co/400x400/ea580c/ffffff?text=Lembu+Suro'" class="w-full h-full object-cover transform hover:scale-105 transition-transform" alt="Lembu Suro">
+                    </div>
+                </div>
+
+                <div class="space-y-3 max-w-2xl mx-auto">
+                    <span class="px-4 py-1.5 bg-orange-200 text-orange-950 rounded-2xl text-xs font-black uppercase tracking-widest border border-orange-500 shadow-sm">E-Modul Interaktif Berurutan</span>
+                    <h2 class="text-3xl sm:text-5xl font-black text-orange-950 tracking-tight">Selamat Datang, Cah Kediri!</h2>
+                    <p class="text-slate-900 text-base sm:text-lg font-bold leading-relaxed">
+                        Ayo Mengenal Cerita Rakyat dari Kediri! Silakan isi absensi kehadiran terlebih dahulu di bawah ini untuk mencatat sesi belajarmu, lalu klik Lanjut Belajar! 🎭🔥
+                    </p>
+                </div>
+
+                <!-- Absen / Daftar Hadir Card (Wajib di awal) -->
+                <div class="max-w-md mx-auto bg-orange-50/95 p-6 rounded-3xl border-2 border-orange-400 text-left space-y-4 shadow-xl">
+                    <h3 class="font-black text-orange-950 text-base flex items-center"><i class="fa-solid fa-user-pen mr-2 text-orange-700"></i> Absensi Kehadiran Siswa</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-black text-slate-900 mb-1">Nama Lengkap Siswa</label>
+                            <input type="text" id="studentNameInput" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white text-sm font-bold focus:ring-2 focus:ring-orange-600 focus:outline-none" placeholder="Contoh: Budi Santoso">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-black text-slate-900 mb-1">Kelas / Sekolah</label>
+                            <input type="text" id="studentClassInput" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white text-sm font-bold focus:ring-2 focus:ring-orange-600 focus:outline-none" placeholder="Contoh: Kelas 8A - SMPN 1 Kediri">
+                        </div>
+                        <button onclick="submitAttendanceAndStart()" class="w-full py-3.5 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm transition-all shadow-lg border border-orange-500 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-play"></i>
+                            <span>Kirim Absen & Lanjut Belajar (Bab 1)</span>
+                        </button>
+                    </div>
+                    <div id="attendanceSuccessMsg" class="hidden p-3 rounded-2xl bg-emerald-100 text-emerald-950 text-xs font-black text-center border-2 border-emerald-400 shadow-sm">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Absensi berhasil tercatat! Memulai pembelajaran...
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 pt-4">
+                    <button onclick="unlockAndNext(0)" class="px-7 py-3.5 bg-slate-800 hover:bg-slate-900 text-white font-black rounded-2xl text-sm transition-all shadow-xl flex items-center space-x-2 border-2 border-slate-700">
+                        <i class="fa-solid fa-book-open"></i>
+                        <span>Langsung Masuk Materi Bab 1</span>
+                    </button>
+                    <a id="berandaWaBtn" href="https://wa.me/6281234567890?text=Halo%20Kak,%20saya%20ingin%20konsultasi%20tugas%20Lembu%20Suro." target="_blank" class="px-6 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl text-sm transition-all shadow-xl flex items-center space-x-2 border-2 border-emerald-400">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Tanya Guru (WhatsApp)</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DYNAMIC CHAPTER VIEWS CONTAINER -->
+        <div id="chaptersContainer">
+            <!-- Injected dynamically via JS -->
+        </div>
+
+        <!-- VIEW: REKAP & PDF -->
+        <div id="view-rekap" class="hidden space-y-8 bg-white p-8 sm:p-12 rounded-3xl border-2 border-orange-300 shadow-2xl">
+            <div class="border-b-2 border-slate-200 pb-4 flex items-center justify-between">
+                <div>
+                    <span class="px-3 py-1 bg-amber-200 text-amber-950 rounded-2xl text-xs font-black uppercase tracking-wider border border-amber-400 shadow-sm">Dashboard & Export</span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-2"><i class="fa-solid fa-clipboard-list mr-2 text-amber-600"></i> Rekap Data & Unduh PDF</h2>
+                </div>
+                <div class="flex space-x-2">
+                    <button onclick="exportDataPDF()" class="px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white font-black rounded-2xl text-sm shadow-lg transition-all flex items-center space-x-2 border border-rose-400">
+                        <i class="fa-solid fa-file-pdf"></i> <span>Unduh PDF Penting</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div class="p-6 rounded-3xl bg-orange-50 border-2 border-orange-300 space-y-3 shadow-md">
+                    <h3 class="font-black text-orange-950 text-lg flex items-center"><i class="fa-solid fa-user-check mr-2 text-orange-700"></i> Daftar Kehadiran (Absen) Siswa</h3>
+                    <div id="rekapAttendanceList" class="space-y-2">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-sky-50 border-2 border-sky-300 space-y-3 shadow-md">
+                    <h3 class="font-black text-sky-950 text-lg flex items-center"><i class="fa-solid fa-cloud-sun mr-2 text-sky-700"></i> Daftar Catatan Refleksi Tersimpan</h3>
+                    <div id="rekapReflectionList" class="space-y-3">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between pt-6 border-t-2 border-slate-200">
+                <button onclick="switchTab('beranda')" class="px-5 py-2.5 bg-slate-200 text-slate-900 font-bold rounded-2xl text-sm hover:bg-slate-300 transition-colors">← Beranda</button>
+            </div>
+        </div>
+
+        <!-- VIEW: EDITOR MATERI & SOAL -->
+        <div id="view-editor" class="hidden space-y-8 bg-white p-8 sm:p-12 rounded-3xl border-2 border-amber-400 shadow-2xl">
+            <div class="border-b-2 border-amber-300 pb-4 flex items-center justify-between">
+                <div>
+                    <span class="px-3 py-1 bg-amber-200 text-amber-950 rounded-2xl text-xs font-black uppercase tracking-wider border border-amber-400 shadow-sm">Mode Pengajar / Admin</span>
+                    <h2 class="text-3xl font-black text-slate-900 mt-2"><i class="fa-solid fa-gear mr-2 text-amber-700"></i> Editor Materi, Soal & No WhatsApp</h2>
+                </div>
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 border-2 border-amber-400 text-amber-800 flex items-center justify-center text-2xl font-black shadow-md">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-slate-900 text-sm">
+                <!-- Edit WhatsApp Number -->
+                <div class="p-6 rounded-3xl bg-emerald-50 border-2 border-emerald-400 space-y-4 shadow-md">
+                    <h3 class="font-black text-emerald-950 text-lg"><i class="fa-brands fa-whatsapp mr-1 text-emerald-700"></i> Pengaturan Nomor WhatsApp Konsultasi</h3>
+                    <div class="space-y-2">
+                        <label class="block font-black text-slate-900">Nomor WhatsApp Guru / Admin (Format: 628xxxxxxxxxx)</label>
+                        <input type="text" id="adminWaInput" class="w-full px-4 py-2.5 rounded-2xl border-2 border-emerald-400 bg-white font-bold" value="6281234567890" placeholder="6281234567890">
+                        <button onclick="saveAdminWa()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl shadow-lg border border-emerald-500">Simpan Nomor WhatsApp</button>
+                    </div>
+                </div>
+
+                <!-- Add Chapter / Material -->
+                <div class="p-6 rounded-3xl bg-amber-50 border-2 border-amber-400 space-y-4 shadow-md">
+                    <h3 class="font-black text-amber-950 text-lg"><i class="fa-solid fa-plus-circle mr-1"></i> Tambah / Ubah Bab Materi Pembelajaran</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block font-black mb-1">Judul Bab / Menu</label>
+                            <input type="text" id="editChapTitle" class="w-full px-4 py-2.5 rounded-2xl border-2 border-amber-400 bg-white font-bold" placeholder="Contoh: Bab Tambahan">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Icon FontAwesome (contoh: fa-book)</label>
+                            <input type="text" id="editChapIcon" class="w-full px-4 py-2.5 rounded-2xl border-2 border-amber-400 bg-white font-bold" placeholder="fa-book">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-black mb-1">Sub Judul / Topik</label>
+                            <input type="text" id="editChapSubtitle" class="w-full px-4 py-2.5 rounded-2xl border-2 border-amber-400 bg-white font-bold" placeholder="Topik Bahasan">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-black mb-1">Isi Materi Lengkap (HTML didukung)</label>
+                            <textarea id="editChapContent" rows="4" class="w-full px-4 py-2.5 rounded-2xl border-2 border-amber-400 bg-white font-bold" placeholder="Tuliskan materi pembelajaran di sini..."></textarea>
+                        </div>
+                    </div>
+                    <button onclick="addNewChapter()" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-black rounded-2xl shadow-lg border border-amber-500">Tambah Bab Materi</button>
+                </div>
+
+                <!-- Add Quiz Question -->
+                <div class="p-6 rounded-3xl bg-orange-50 border-2 border-orange-400 space-y-4 shadow-md">
+                    <h3 class="font-black text-orange-950 text-lg"><i class="fa-solid fa-plus-circle mr-1"></i> Tambah Soal Kuis Pilihan Ganda</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="sm:col-span-2">
+                            <label class="block font-black mb-1">Pertanyaan Baru</label>
+                            <input type="text" id="newQuizQ" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Contoh: Di manakah letak Gunung Kelud?">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Opsi A</label>
+                            <input type="text" id="newQuizA" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Pilihan A">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Opsi B</label>
+                            <input type="text" id="newQuizB" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Pilihan B">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Opsi C</label>
+                            <input type="text" id="newQuizC" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Pilihan C">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Opsi D</label>
+                            <input type="text" id="newQuizD" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Pilihan D">
+                        </div>
+                        <div>
+                            <label class="block font-black mb-1">Indeks Jawaban Benar (0=A, 1=B, 2=C, 3=D)</label>
+                            <select id="newQuizCorrect" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold">
+                                <option value="0">A</option>
+                                <option value="1">B</option>
+                                <option value="2">C</option>
+                                <option value="3">D</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-black mb-1">Penjelasan / Pembahasan</label>
+                            <input type="text" id="newQuizExp" class="w-full px-4 py-2.5 rounded-2xl border-2 border-orange-400 bg-white font-bold" placeholder="Penjelasan jawaban benar...">
+                        </div>
+                    </div>
+                    <button onclick="addNewQuizQuestion()" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl shadow-lg border border-orange-500">Tambah Soal Kuis</button>
+                </div>
+
+                <div class="p-6 rounded-3xl bg-slate-100 border-2 border-slate-300 space-y-3 shadow-md">
+                    <h3 class="font-black text-slate-950 text-lg"><i class="fa-solid fa-list-check mr-1"></i> Daftar Bab & Soal Saat Ini</h3>
+                    <div id="editorContentList" class="space-y-2 max-h-60 overflow-y-auto pr-2">
+                        <!-- Injected dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between pt-6 border-t-2 border-slate-200">
+                <button onclick="switchTab('beranda')" class="px-5 py-2.5 bg-slate-200 text-slate-900 font-bold rounded-2xl text-sm hover:bg-slate-300 transition-colors">← Beranda</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t-2 border-orange-200 py-6 text-center text-xs sm:text-sm text-slate-700 mt-12 font-bold">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-black text-orange-950 text-base">CAH KEDIRI NGULIK LEGENDA LEMBU SURO</p>
+                <p class="mt-0.5 text-slate-600">E-Modul Interaktif Budaya Nusantara • Dibuat dengan semangat literasi lokal</p>
+            </div>
+            <a id="footerWaBtn" href="https://wa.me/6281234567890?text=Halo%20Guru,%20saya%20ingin%20bertanya%20tentang%20materi%20E-Modul%20Lembu%20Suro." target="_blank" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black rounded-2xl text-xs shadow-lg flex items-center space-x-2 border border-emerald-400">
+                <i class="fa-brands fa-whatsapp text-sm"></i> <span>Konsultasi Guru via WhatsApp</span>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let adminWaNumber = "6281234567890";
+
+        // Data chapters with sequential unlock requirement
+        let chapters = [
+            {
+                id: "beranda",
+                title: "Beranda",
+                icon: "fa-house",
+                color: "text-amber-600",
+                subtitle: "Halaman Utama",
+                content: "" 
+            },
+            {
+                id: "mengenal",
+                title: "Mengenal Cerita Rakyat",
+                icon: "fa-book-open",
+                color: "text-blue-700",
+                subtitle: "Bab 1",
+                content: `
+                    <div class="space-y-6 text-slate-900 text-base leading-relaxed font-bold">
+                        <div class="p-6 rounded-3xl bg-blue-50 border-2 border-blue-300 space-y-3 shadow-md">
+                            <h3 class="font-black text-blue-950 text-xl">Apa Itu Cerita Rakyat?</h3>
+                            <p class="font-medium">
+                                <strong>Cerita rakyat</strong> adalah cerita yang berkembang di tengah masyarakat dan diwariskan dari satu generasi ke generasi berikutnya. Cerita rakyat biasanya disampaikan secara lisan sebelum kemudian ditulis dalam berbagai bentuk.
+                            </p>
+                            <p class="text-sm font-black text-blue-900">Cerita rakyat dapat berupa:</p>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="p-3 bg-white rounded-2xl border-2 border-blue-300 text-center text-sm font-black text-blue-900 shadow-sm">🌟 Legenda</div>
+                                <div class="p-3 bg-white rounded-2xl border-2 border-blue-300 text-center text-sm font-black text-blue-900 shadow-sm">🧚 Dongeng</div>
+                                <div class="p-3 bg-white rounded-2xl border-2 border-blue-300 text-center text-sm font-black text-blue-900 shadow-sm">🦸 Mite</div>
+                                <div class="p-3 bg-white rounded-2xl border-2 border-blue-300 text-center text-sm font-black text-blue-900 shadow-sm">🐉 Fabel</div>
+                                <div class="p-3 bg-white rounded-2xl border-2 border-blue-300 text-center text-sm font-black text-blue-900 shadow-sm">👑 Hikayat</div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-orange-50 border-2 border-orange-300 space-y-3 shadow-md">
+                            <h3 class="font-black text-orange-950 text-xl">Mengapa Cerita Rakyat Penting?</h3>
+                            <p class="font-medium">Cerita rakyat tidak hanya menghibur. Di dalamnya sering terdapat:</p>
+                            <div class="flex flex-wrap gap-3 pt-1">
+                                <span class="px-4 py-2 bg-white rounded-2xl border-2 border-orange-300 font-black text-orange-950 text-sm shadow-sm">💡 Nilai Moral</span>
+                                <span class="px-4 py-2 bg-white rounded-2xl border-2 border-orange-300 font-black text-orange-950 text-sm shadow-sm">🏛️️ Nilai Budaya</span>
+                                <span class="px-4 py-2 bg-white rounded-2xl border-2 border-orange-300 font-black text-orange-950 text-sm shadow-sm">🤝 Nilai Sosial</span>
+                                <span class="px-4 py-2 bg-white rounded-2xl border-2 border-orange-300 font-black text-orange-950 text-sm shadow-sm">🌱 Nilai Kehidupan</span>
+                            </div>
+                            <p class="text-sm text-slate-900 mt-2 font-bold">
+                                Contohnya, melalui legenda Lembu Suro kita dapat belajar tentang janji, kejujuran, kecerdikan, akibat dari kemarahan, dan pentingnya mempertimbangkan tindakan sebelum mengambil keputusan.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "legenda",
+                title: "Legenda Lembu Suro",
+                icon: "fa-mountain",
+                color: "text-amber-700",
+                subtitle: "Bab 2",
+                content: `
+                    <div class="space-y-6 text-slate-900 text-base leading-relaxed font-bold">
+                        <div class="flex flex-col sm:flex-row gap-6 items-center bg-amber-50 p-6 rounded-3xl border-2 border-amber-400 shadow-md">
+                            <div class="w-40 h-40 rounded-3xl bg-amber-200 overflow-hidden flex-shrink-0 shadow-lg border-2 border-amber-500">
+                                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&auto=format&fit=crop&q=80" onerror="this.src='https://placehold.co/300x300/f59e0b/ffffff?text=Lembu+Suro'" class="w-full h-full object-cover" alt="Lembu Suro">
+                            </div>
+                            <div>
+                                <h4 class="font-black text-amber-950 text-xl">Kisah Lembu Suro dan Gunung Kelud</h4>
+                                <p class="text-sm text-amber-950 mt-1 font-medium">Pada zaman dahulu, masyarakat Kediri memiliki sebuah cerita tentang seekor makhluk sakti bernama <strong>Lembu Suro</strong>. Lembu Suro digambarkan sebagai sosok yang memiliki wujud seperti manusia berkepala lembu atau kerbau dan mempunyai kesaktian yang luar biasa.</p>
+                            </div>
+                        </div>
+
+                        <p class="font-medium">Pada suatu waktu, Lembu Suro tertarik kepada <strong>Dewi Kilisuci</strong>, seorang putri yang dikenal cantik dan bijaksana. Lembu Suro kemudian menyampaikan keinginannya untuk meminang Dewi Kilisuci.</p>
+
+                        <p class="font-medium">Namun, Dewi Kilisuci tidak ingin begitu saja menerima pinangan tersebut. Ia kemudian memberikan sebuah syarat yang sangat sulit: Lembu Suro diminta membuat sebuah sumur atau terowongan dalam waktu yang sangat singkat.</p>
+
+                        <div class="p-6 rounded-3xl bg-orange-100 border-2 border-orange-400 space-y-2 shadow-md">
+                            <h4 class="font-black text-orange-950 text-lg"><i class="fa-solid fa-moon mr-2 text-orange-700"></i> Rencana Dewi Kilisuci</h4>
+                            <p class="text-sm text-slate-900 font-medium">Ketika pekerjaan Lembu Suro hampir selesai, Dewi Kilisuci dan para pengikutnya memiliki sebuah rencana agar Lembu Suro tidak berhasil memenuhi persyaratan tersebut. Dalam salah satu versi cerita, Lembu Suro kemudian terjebak di dalam lubang hasil galiannya. Lembu Suro merasa ditipu dan dikhianati. Dalam keadaan marah, ia mengucapkan kutukan terhadap wilayah Kediri.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "gunung",
+                title: "Lembu Suro & Kelud",
+                icon: "fa-volcano",
+                color: "text-rose-700",
+                subtitle: "Bab 3",
+                content: `
+                    <div class="space-y-6 text-slate-900 text-base leading-relaxed font-bold">
+                        <div class="p-6 rounded-3xl bg-rose-50 border-2 border-rose-300 space-y-3 shadow-md">
+                            <h3 class="font-black text-rose-950 text-xl">Apa Hubungannya?</h3>
+                            <p class="font-medium">
+                                Dalam cerita rakyat masyarakat Kediri dan sekitarnya, Gunung Kelud memiliki hubungan erat dengan legenda Lembu Suro. Diceritakan bahwa setelah merasa dikhianati, Lembu Suro mengucapkan kutukan.
+                            </p>
+                            <div class="p-4 bg-white rounded-2xl border-2 border-rose-400 text-rose-950 font-black italic text-center text-lg shadow-sm">
+                                “Kediri akan menjadi sungai, Blitar akan menjadi daratan, dan Tulungagung akan menjadi danau.”
+                            </div>
+                            <p class="text-xs text-slate-700 text-center font-bold">Ungkapan dan detail cerita tersebut memiliki beberapa variasi sesuai versi yang berkembang di masyarakat.</p>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-amber-50 border-2 border-amber-400 space-y-4 shadow-md">
+                            <h3 class="font-black text-amber-950 text-xl"><i class="fa-solid fa-triangle-exclamation mr-2 text-amber-700"></i> Catatan Pembelajaran Penting</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 bg-white rounded-3xl border-2 border-amber-400 space-y-2 shadow-sm">
+                                    <h4 class="font-black text-amber-950">🐂 Legenda (Budaya)</h4>
+                                    <p class="text-sm text-slate-800 font-medium">Kisah Lembu Suro dan kutukannya merupakan warisan cerita rakyat dan tradisi lisan masyarakat turun-temurun.</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-3xl border-2 border-rose-400 space-y-2 shadow-sm">
+                                    <h4 class="font-black text-rose-950">🌋 Fakta (Ilmiah)</h4>
+                                    <p class="text-sm text-slate-800 font-medium">Gunung Kelud adalah gunung api aktif yang terbentuk melalui proses geologi dan vulkanologi modern.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "video",
+                title: "Video Cerita",
+                icon: "fa-video",
+                color: "text-purple-700",
+                subtitle: "Bab 4",
+                content: `
+                    <div class="space-y-6 text-center">
+                        <p class="text-slate-900 text-base font-bold">Saksikan ilustrasi dan cuplikan visual kisah Lembu Suro dan Gunung Kelud berikut ini untuk memperdalam pemahaman cerita:</p>
+                        
+                        <div class="relative w-full aspect-video rounded-3xl overflow-hidden bg-slate-900 shadow-2xl border-4 border-orange-400 flex items-center justify-center">
+                            <iframe class="w-full h-full" src="https://www.youtube-type.com/embed/dQw4w9WgXcQ" onerror="this.outerHTML='<div class=\'text-white p-8\'>Video Animasi Legenda Lembu Suro Kediri (Simulasi Pemutaran)</div>'" title="Legenda Lembu Suro" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-xs text-slate-600 font-black">Sumber: Arsip Budaya Nusantara & Dongeng Rakyat Kediri</p>
+                    </div>
+                `
+            },
+            {
+                id: "ciri",
+                title: "Ciri Cerita Rakyat",
+                icon: "fa-wand-magic-sparkles",
+                color: "text-amber-600",
+                subtitle: "Bab 5",
+                content: `
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-900 font-bold">
+                        <div class="p-6 rounded-3xl bg-amber-50 border-2 border-amber-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-amber-950 text-xl">1. Turun-Temurun 👨‍👩‍👧‍‍👦</h3>
+                            <p class="text-slate-800 text-sm leading-relaxed font-medium">Cerita rakyat diwariskan dari generasi ke generasi secara lisan.</p>
+                            <div class="p-3 bg-white rounded-2xl border border-amber-300 text-xs font-bold text-amber-950">
+                                <strong>Contoh:</strong> Diceritakan masyarakat Kediri turun-temurun.
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-orange-50 border-2 border-orange-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-orange-950 text-xl">2. Tradisional 📜</h3>
+                            <p class="text-slate-800 text-sm leading-relaxed font-medium">Cerita rakyat menjadi bagian dari kebudayaan masyarakat.</p>
+                            <div class="p-3 bg-white rounded-2xl border border-orange-300 text-xs font-bold text-orange-950">
+                                <strong>Contoh:</strong> Ikon budaya masyarakat sekitar Gunung Kelud.
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-indigo-50 border-2 border-indigo-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-indigo-950 text-xl">3. Imajinatif ✨</h3>
+                            <p class="text-slate-800 text-sm leading-relaxed font-medium">Terdapat tokoh atau peristiwa luar biasa di luar nalar.</p>
+                            <div class="p-3 bg-white rounded-2xl border border-indigo-300 text-xs font-bold text-indigo-950">
+                                <strong>Contoh:</strong> Manusia berkepala lembu yang sangat sakti.
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-emerald-50 border-2 border-emerald-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-emerald-950 text-xl">4. Pesan Moral 💡</h3>
+                            <p class="text-slate-800 text-sm leading-relaxed font-medium">Mengandung pelajaran hidup dan nilai budi pekerti.</p>
+                            <div class="p-3 bg-white rounded-2xl border border-emerald-300 text-xs font-bold text-emerald-950">
+                                <strong>Pesan:</strong> Jangan mengingkari janji dan kendalikan amarah.
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "unsur",
+                title: "Unsur Cerita",
+                icon: "fa-puzzle-piece",
+                color: "text-emerald-700",
+                subtitle: "Bab 6",
+                content: `
+                    <div class="space-y-6 text-slate-900 font-bold">
+                        <div class="p-6 rounded-3xl bg-emerald-50 border-2 border-emerald-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-emerald-950 text-xl flex items-center"><i class="fa-solid fa-users mr-2 text-emerald-700"></i> Tokoh 👤</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div class="p-4 bg-white rounded-2xl border-2 border-emerald-300 text-sm shadow-sm">
+                                    <strong class="text-emerald-950 block mb-1 font-black">🐂 Lembu Suro</strong>
+                                    Tokoh sakti berkuasa luar biasa.
+                                </div>
+                                <div class="p-4 bg-white rounded-2xl border-2 border-emerald-300 text-sm shadow-sm">
+                                    <strong class="text-emerald-950 block mb-1 font-black">👸 Dewi Kilisuci</strong>
+                                    Putri bijaksana pemberi syarat.
+                                </div>
+                                <div class="p-4 bg-white rounded-2xl border-2 border-emerald-300 text-sm shadow-sm">
+                                    <strong class="text-emerald-950 block mb-1 font-black">👥 Masyarakat</strong>
+                                    Pewaris tradisi lisan Kediri.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-amber-50 border-2 border-amber-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-amber-950 text-xl flex items-center"><i class="fa-solid fa-map-pin mr-2 text-amber-700"></i> Latar (Setting) 📍</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-black">
+                                <div class="p-4 bg-white rounded-2xl border-2 border-amber-300 shadow-sm">
+                                    <strong>Latar Tempat:</strong> Kerajaan Kediri, Puncak Gunung Kelud, Jawa Timur.
+                                </div>
+                                <div class="p-4 bg-white rounded-2xl border-2 border-amber-300 shadow-sm">
+                                    <strong>Latar Suasana:</strong> Menegangkan, penuh harap, hingga marah.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "alur",
+                title: "Alur Cerita",
+                icon: "fa-diagram-project",
+                color: "text-indigo-700",
+                subtitle: "Bab 7",
+                content: `
+                    <div class="space-y-4 max-w-2xl mx-auto font-bold">
+                        <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-emerald-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">1</div>
+                            <div>
+                                <h4 class="font-black text-emerald-950">🟢 Awal</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Lembu Suro ingin meminang Dewi Kilisuci.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-amber-50 border-2 border-amber-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-amber-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">2</div>
+                            <div>
+                                <h4 class="font-black text-amber-950">🟡 Muncul Masalah</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Dewi Kilisuci memberikan syarat membuat sumur dalam semalam.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-orange-50 border-2 border-orange-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-orange-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">3</div>
+                            <div>
+                                <h4 class="font-black text-orange-950">🟠 Perjuangan</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Lembu Suro menggali sumur dengan kesaktiannya.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-rose-50 border-2 border-rose-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-rose-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">4</div>
+                            <div>
+                                <h4 class="font-black text-rose-950">🔴 Konflik</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Lembu Suro dijebak di dalam lubang galian.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-purple-50 border-2 border-purple-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-purple-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">5</div>
+                            <div>
+                                <h4 class="font-black text-purple-950">⚫ Puncak</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Lembu Suro mengucapkan sumpah kutukan.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-blue-50 border-2 border-blue-400 flex items-start space-x-4 shadow-md">
+                            <div class="w-8 h-8 rounded-2xl bg-blue-700 text-white flex items-center justify-center font-black flex-shrink-0 text-sm">6</div>
+                            <div>
+                                <h4 class="font-black text-blue-950">🟣 Akhir</h4>
+                                <p class="text-sm text-slate-900 mt-1 font-medium">Kisah melegenda dan dikaitkan dengan Gunung Kelud.</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "pesan",
+                title: "Pesan Moral",
+                icon: "fa-lightbulb",
+                color: "text-amber-600",
+                subtitle: "Bab 8",
+                content: `
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-slate-900 font-bold">
+                        <div class="p-6 rounded-3xl bg-yellow-50 border-2 border-yellow-400 space-y-2 shadow-md">
+                            <h4 class="font-black text-yellow-950 text-lg flex items-center"><i class="fa-solid fa-handshake mr-2 text-yellow-700"></i> Menjaga Janji</h4>
+                            <p class="text-sm font-medium leading-relaxed">Janji adalah utang yang wajib dipertimbangkan dan ditepati.</p>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-orange-50 border-2 border-orange-400 space-y-2 shadow-md">
+                            <h4 class="font-black text-orange-950 text-lg flex items-center"><i class="fa-solid fa-brain mr-2 text-orange-700"></i> Berpikir Sebelum Bertindak</h4>
+                            <p class="text-sm font-medium leading-relaxed">Setiap keputusan membawa dampak bagi diri dan orang lain.</p>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-rose-50 border-2 border-rose-400 space-y-2 shadow-md">
+                            <h4 class="font-black text-rose-950 text-lg flex items-center"><i class="fa-solid fa-face-angry mr-2 text-rose-700"></i> Mengendalikan Amarah</h4>
+                            <p class="text-sm font-medium leading-relaxed">Amarah yang tidak terkendali merugikan banyak pihak.</p>
+                        </div>
+
+                        <div class="p-6 rounded-3xl bg-emerald-50 border-2 border-emerald-400 space-y-2 shadow-md">
+                            <h4 class="font-black text-emerald-950 text-lg flex items-center"><i class="fa-solid fa-heart mr-2 text-emerald-700"></i> Melestarikan Budaya</h4>
+                            <p class="text-sm font-medium leading-relaxed">Merawat warisan leluhur bangsa dengan penuh bangga.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "contoh",
+                title: "Contoh Cerita",
+                icon: "fa-file-lines",
+                color: "text-cyan-700",
+                subtitle: "Bab 9",
+                content: `
+                    <div class="prose max-w-none text-slate-900 space-y-4 text-base leading-relaxed bg-slate-100 p-6 sm:p-8 rounded-3xl border-2 border-slate-300 shadow-md font-bold">
+                        <h3 class="font-black text-orange-950 text-xl text-center">“Lembu Suro dan Gunung Kelud”</h3>
+                        <p class="font-medium">Pada zaman dahulu, hiduplah seorang tokoh sakti bernama Lembu Suro. Ia dikenal memiliki kekuatan yang luar biasa dan ingin meminang Dewi Kilisuci.</p>
+                        <p class="font-medium">Sang putri kemudian memberikan persyaratan mustahil: membuat sumur di puncak gunung dalam semalam. Dengan kesaktiannya, Lembu Suro menggali dengan gigih hingga hampir selesai.</p>
+                        <p class="font-medium">Namun, sebuah siasat licik membuat Lembu Suro terjebak di dalam sumur galiannya. Merasa ditipu, ia murka dan mengucapkan sumpah kutukan bagi tanah Kediri dan sekitarnya.</p>
+                        <p class="font-medium">Hingga kini, kisah tersebut diwariskan turun-temurun dan menjadi legenda yang melekat erat dengan Gunung Kelud.</p>
+                    </div>
+                `
+            },
+            {
+                id: "latihan",
+                title: "Latihan Soal",
+                icon: "fa-pen-to-square",
+                color: "text-teal-700",
+                subtitle: "Bab 10",
+                content: `
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-black text-teal-950 uppercase tracking-wider bg-teal-100 px-3 py-1.5 rounded-2xl border-2 border-teal-300 shadow-sm">Evaluasi Pilihan Ganda</span>
+                            <span id="quizScoreBadge" class="px-4 py-1.5 bg-orange-100 text-orange-950 rounded-2xl font-black text-sm border-2 border-orange-300 shadow-sm">Skor: 0 / 5</span>
+                        </div>
+                        <div id="quizBox" class="space-y-6">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "kuis",
+                title: "Kuis Benar/Salah",
+                icon: "fa-circle-question",
+                color: "text-pink-700",
+                subtitle: "Bab 11",
+                content: `
+                    <div class="space-y-6 text-slate-900 font-bold">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-black text-pink-950 uppercase tracking-wider bg-pink-100 px-3 py-1.5 rounded-2xl border-2 border-pink-300 shadow-sm">Kuis Pernyataan</span>
+                            <span id="trueFalseScoreBadge" class="px-4 py-1.5 bg-pink-100 text-pink-950 rounded-2xl font-black text-sm border-2 border-pink-300 shadow-sm">Skor TF: 0 / 6</span>
+                        </div>
+                        <p class="text-slate-800 text-sm font-black">Tentukan apakah pernyataan berikut bernilai <strong>Benar (✅)</strong> atau <strong>Salah (❌)</strong>:</p>
+                        <div class="space-y-3" id="trueFalseContainer">
+                            <!-- Injected dynamically -->
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "tugas",
+                title: "Tugas Bercerita",
+                icon: "fa-comments",
+                color: "text-violet-700",
+                subtitle: "Bab 12",
+                content: `
+                    <div class="space-y-6 text-slate-900 text-base leading-relaxed font-bold">
+                        <div class="p-6 rounded-3xl bg-violet-50 border-2 border-violet-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-violet-950 text-xl">Yuk, Ceritakan Kembali!</h3>
+                            <p class="font-medium">Ceritakan kembali legenda Lembu Suro dan Gunung Kelud menggunakan bahasamu sendiri berdasarkan panduan berikut:</p>
+                            <ol class="list-decimal pl-5 space-y-1 text-sm font-black text-violet-950">
+                                <li>Siapa tokohnya?</li>
+                                <li>Apa yang terjadi?</li>
+                                <li>Apa masalahnya?</li>
+                                <li>Bagaimana konflik terjadi?</li>
+                                <li>Bagaimana akhir ceritanya?</li>
+                                <li>Apa pesan moralnya?</li>
+                            </ol>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="block text-sm font-black text-slate-950">Tuliskan Cerita / Ringkasanmu di Sini:</label>
+                            <textarea id="storyTugasInput" rows="5" class="w-full p-4 rounded-3xl border-2 border-violet-400 focus:ring-2 focus:ring-orange-600 focus:outline-none text-slate-900 text-sm font-bold bg-white shadow-sm" placeholder="Tuliskan cerita versimu di sini..."></textarea>
+                            <button onclick="saveStoryTugas()" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm transition-colors shadow-lg border border-orange-500">Simpan Tugas</button>
+                            <div id="tugasSuccess" class="hidden p-4 rounded-3xl bg-emerald-100 border-2 border-emerald-400 text-emerald-950 text-sm font-black shadow-sm">
+                                <i class="fa-solid fa-circle-check mr-2"></i> Tugas berhasil disimpan! Kerja bagus, Cah Kediri hebat!
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "refleksi",
+                title: "Refleksi",
+                icon: "fa-cloud-sun",
+                color: "text-sky-700",
+                subtitle: "Bab 13",
+                content: `
+                    <div class="space-y-6 text-slate-900 text-base leading-relaxed font-bold">
+                        <div class="p-6 rounded-3xl bg-sky-50 border-2 border-sky-400 space-y-3 shadow-md">
+                            <h3 class="font-black text-sky-950 text-xl">⭐ Pemahaman Saya:</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-black text-slate-900">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-orange-600 rounded"> <span>Pengertian cerita rakyat</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-orange-600 rounded"> <span>Ciri-ciri cerita rakyat</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-orange-600 rounded"> <span>Tokoh dalam legenda Lembu Suro</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-orange-600 rounded"> <span>Hubungan legenda dengan Gunung Kelud</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="checkbox" class="w-4 h-4 text-orange-600 rounded"> <span>Unsur-unsur cerita rakyat</span></label>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="font-black text-slate-950 text-lg">💬 Pertanyaan Refleksi:</h4>
+                            <ol class="list-decimal pl-5 space-y-2 text-sm font-bold text-slate-900">
+                                <li>Apa hal paling menarik dari legenda Lembu Suro?</li>
+                                <li>Apa pesan moral yang kamu dapatkan?</li>
+                                <li>Mengapa cerita rakyat perlu dilestarikan?</li>
+                                <li>Menurutmu, apa perbedaan antara legenda dengan fakta ilmiah?</li>
+                            </ol>
+                            <textarea id="reflectionInput" rows="4" class="w-full p-4 rounded-3xl border-2 border-sky-400 focus:ring-2 focus:ring-orange-600 focus:outline-none text-slate-900 text-sm font-bold bg-white shadow-sm" placeholder="Tuliskan jawaban refleksimu di sini..."></textarea>
+                            <button onclick="saveReflection()" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm transition-colors shadow-lg border border-orange-500">Simpan Refleksi & Lihat Rekap</button>
+                            <div id="reflectionSuccess" class="hidden p-4 rounded-3xl bg-emerald-100 border-2 border-emerald-400 text-emerald-950 text-sm font-black shadow-sm">
+                                <i class="fa-solid fa-circle-check mr-2"></i> Refleksi berhasil disimpan!
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        let maxUnlockedIndex = 0; // Sequential progression lock
+        let currentTabId = 'beranda';
+        let currentQuizIndex = 0;
+        let score = 0;
+        let tfScore = 0;
+        let attendanceList = [
+            { name: "Dewi Lestari", className: "Kelas 8A", time: "08:15 WIB" },
+            { name: "Ahmad Fauzi", className: "Kelas 8B", time: "08:20 WIB" }
+        ];
+        let reflectionList = [
+            { name: "Dewi Lestari", text: "Legenda Lembu Suro sangat menarik karena menjelaskan tentang Gunung Kelud dan mengajarkan pentingnya menepati janji." }
+        ];
+
+        let quizQuestions = [
+            {
+                question: "Cerita yang diwariskan dari generasi ke generasi disebut ...",
+                options: ["Berita", "Cerita rakyat", "Laporan", "Iklan"],
+                correct: 1,
+                explanation: "Tepat! Cerita rakyat diwariskan secara turun-temurun."
+            },
+            {
+                question: "Tokoh utama dalam legenda yang dipelajari adalah ...",
+                options: ["Jaka Tarub", "Malin Kundang", "Lembu Suro", "Timun Mas"],
+                correct: 2,
+                explanation: "Benar sekali! Tokoh utamanya adalah Lembu Suro."
+            },
+            {
+                question: "Lembu Suro dikenal sebagai tokoh yang memiliki ...",
+                options: ["Kesaktian", "Kapal besar", "Istana megah", "Pasukan kerajaan"],
+                correct: 0,
+                explanation: "Tepat! Lembu Suro memiliki kesaktian dan kekuatan luar biasa."
+            },
+            {
+                question: "Legenda Lembu Suro berkaitan dengan ...",
+                options: ["Gunung Merapi", "Gunung Kelud", "Gunung Bromo", "Gunung Semeru"],
+                correct: 1,
+                explanation: "Hebat! Kisah ini berkaitan erat dengan Gunung Kelud."
+            },
+            {
+                question: "Salah satu ciri cerita rakyat adalah ...",
+                options: ["Selalu berdasarkan data ilmiah", "Tidak memiliki pesan", "Bersifat turun-temurun", "Selalu dibuat oleh satu penulis"],
+                correct: 2,
+                explanation: "Benar! Cerita rakyat bersifat turun-temurun dan anonim."
+            }
+        ];
+
+        const trueFalseQuestions = [
+            { text: "Cerita rakyat diwariskan secara turun-temurun.", answer: true, explanation: "Benar! Cerita rakyat disebarluaskan dari generasi ke generasi." },
+            { text: "Lembu Suro merupakan tokoh dalam legenda Kediri.", answer: true, explanation: "Benar! Lembu Suro adalah legenda terkenal dari Kediri." },
+            { text: "Cerita rakyat selalu merupakan fakta sejarah.", answer: false, explanation: "Salah! Cerita rakyat mengandung unsur khayalan/legenda, bukan fakta sejarah murni." },
+            { text: "Gunung Kelud merupakan gunung api.", answer: true, explanation: "Benar! Gunung Kelud adalah gunung api aktif." },
+            { text: "Semua versi cerita Lembu Suro harus sama persis.", answer: false, explanation: "Salah! Cerita rakyat lisan sering memiliki beberapa versi di masyarakat." },
+            { text: "Cerita rakyat dapat mengandung pesan moral.", answer: true, explanation: "Benar! Selalu ada nilai teladan dan pesan moral di dalamnya." }
+        ];
+
+        function updateWhatsAppLinks() {
+            const waUrl = `https://wa.me/${adminWaNumber}?text=Halo%20Kak,%20saya%20ingin%20konsultasi%20materi%20E-Modul%20Lembu%20Suro.`;
+            const headerBtn = document.getElementById('headerWaBtn');
+            const berandaBtn = document.getElementById('berandaWaBtn');
+            const footerBtn = document.getElementById('footerWaBtn');
+            if (headerBtn) headerBtn.href = waUrl;
+            if (berandaBtn) berandaBtn.href = waUrl;
+            if (footerBtn) footerBtn.href = waUrl;
+        }
+
+        function saveAdminWa() {
+            const val = document.getElementById('adminWaInput').value.trim();
+            if (!val) {
+                alert("Nomor WhatsApp tidak boleh kosong.");
+                return;
+            }
+            adminWaNumber = val;
+            updateWhatsAppLinks();
+            alert("Nomor WhatsApp konsultasi berhasil diperbarui!");
+        }
+
+        function renderNavigation() {
+            const container = document.getElementById('navTabsContainer');
+            let html = '';
+
+            // Beranda tab
+            const isBerandaActive = currentTabId === 'beranda';
+            html += `
+                <button onclick="switchTab('beranda')" id="btn-beranda" class="nav-tab flex flex-col items-center px-3.5 py-2 rounded-2xl ${isBerandaActive ? 'bg-orange-600 text-white shadow-xl' : 'bg-slate-100 hover:bg-orange-100 text-slate-900'} font-black text-xs transition-all border-2 ${isBerandaActive ? 'border-orange-500' : 'border-slate-300'}">
+                    <i class="fa-solid fa-house mb-1 text-base text-amber-600"></i>
+                    <span>Beranda</span>
+                </button>
+            `;
+
+            chapters.forEach((chap, idx) => {
+                if (chap.id === 'beranda') return;
+                const isUnlocked = idx <= maxUnlockedIndex;
+                const isActive = currentTabId === chap.id;
+
+                let btnClass = "";
+                let iconColor = chap.color;
+
+                if (isActive) {
+                    btnClass = "bg-orange-600 text-white shadow-xl border-2 border-orange-500";
+                    iconColor = "text-amber-200";
+                } else if (isUnlocked) {
+                    btnClass = "bg-slate-100 hover:bg-orange-100 text-slate-900 border-2 border-slate-300";
+                } else {
+                    btnClass = "bg-slate-200 text-slate-500 opacity-60 cursor-not-allowed border-2 border-slate-400";
+                }
+
+                html += `
+                    <button onclick="${isUnlocked ? `switchTab('${chap.id}')` : `alertLocked(${idx})`}" id="btn-${chap.id}" class="nav-tab flex flex-col items-center px-3.5 py-2 rounded-2xl ${btnClass} font-black text-xs transition-all">
+                        <i class="fa-solid ${chap.icon} mb-1 text-base ${iconColor}"></i>
+                        <span class="whitespace-nowrap">${chap.title} ${!isUnlocked ? '<i class="fa-solid fa-lock text-[10px] ml-0.5"></i>' : ''}</span>
+                    </button>
+                `;
+            });
+
+            // Extra tabs: Rekap & Editor
+            const isRekapActive = currentTabId === 'rekap';
+            const isEditorActive = currentTabId === 'editor';
+            html += `
+                <button onclick="switchTab('rekap')" id="btn-rekap" class="nav-tab flex flex-col items-center px-3.5 py-2 rounded-2xl ${isRekapActive ? 'bg-orange-600 text-white shadow-xl border-2 border-orange-500' : 'bg-amber-50 hover:bg-amber-100 text-amber-950 border-2 border-amber-400'} font-black text-xs transition-all">
+                    <i class="fa-solid fa-clipboard-list mb-1 text-base text-amber-700"></i>
+                    <span>Rekap & PDF</span>
+                </button>
+                <button onclick="switchTab('editor')" id="btn-editor" class="nav-tab flex flex-col items-center px-3.5 py-2 rounded-2xl ${isEditorActive ? 'bg-amber-600 text-white shadow-xl border-2 border-amber-500' : 'bg-amber-50 hover:bg-amber-100 text-amber-950 border-2 border-amber-400'} font-black text-xs transition-all">
+                    <i class="fa-solid fa-gear mb-1 text-base text-amber-800"></i>
+                    <span>Editor Materi</span>
+                </button>
+            `;
+
+            container.innerHTML = html;
+        }
+
+        function renderChaptersContainer() {
+            const container = document.getElementById('chaptersContainer');
+            let html = '';
+
+            chapters.forEach((chap, idx) => {
+                if (chap.id === 'beranda') return;
+                const isActive = currentTabId === chap.id;
+
+                html += `
+                    <div id="view-${chap.id}" class="${isActive ? '' : 'hidden'} space-y-8 bg-white p-8 sm:p-12 rounded-3xl border-2 border-orange-300 shadow-2xl">
+                        <div class="border-b-2 border-slate-200 pb-4 flex items-center justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-950 rounded-2xl text-xs font-black uppercase tracking-wider border border-orange-400 shadow-sm">${chap.subtitle || 'Bab Materi'}</span>
+                                <h2 class="text-3xl font-black text-slate-950 mt-2"><i class="fa-solid ${chap.icon} mr-2 ${chap.color}"></i> ${chap.title}</h2>
+                            </div>
+                            <div class="w-14 h-14 rounded-2xl bg-orange-50 border-2 border-orange-400 ${chap.color} flex items-center justify-center text-2xl font-black shadow-md">
+                                <i class="fa-solid ${chap.icon}"></i>
+                            </div>
+                        </div>
+
+                        ${chap.content}
+
+                        <div class="flex justify-between pt-6 border-t-2 border-slate-200">
+                            <button onclick="switchTab('${idx > 0 ? chapters[idx].id : 'beranda'}')" class="px-5 py-2.5 bg-slate-200 text-slate-900 font-bold rounded-2xl text-sm hover:bg-slate-300 transition-colors">← Sebelumnya</button>
+                            <button onclick="unlockAndNext(${idx})" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm shadow-lg transition-all border border-orange-500 flex items-center space-x-2">
+                                <span>Lanjut Bab Berikutnya →</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function alertLocked(idx) {
+            alert("⚠ Bab ini terkunci! Kamu harus menyelesaikan materi sebelumnya secara berurutan terlebih dahulu.");
+        }
+
+        function unlockAndNext(currentIndex) {
+            if (currentIndex + 1 > maxUnlockedIndex && currentIndex + 1 < chapters.length) {
+                maxUnlockedIndex = currentIndex + 1;
+            }
+            renderNavigation();
+            
+            if (currentIndex + 1 < chapters.length) {
+                switchTab(chapters[currentIndex + 1].id);
+            } else {
+                switchTab('rekap');
+            }
+        }
+
+        function switchTab(tabId) {
+            currentTabId = tabId;
+            
+            document.getElementById('view-beranda').classList.add('hidden');
+            document.getElementById('view-rekap').classList.add('hidden');
+            document.getElementById('view-editor').classList.add('hidden');
+            
+            chapters.forEach(chap => {
+                if (chap.id === 'beranda') return;
+                const el = document.getElementById(`view-${chap.id}`);
+                if (el) el.classList.add('hidden');
+            });
+
+            if (tabId === 'beranda') {
+                document.getElementById('view-beranda').classList.remove('hidden');
+            } else if (tabId === 'rekap') {
+                document.getElementById('view-rekap').classList.remove('hidden');
+                renderRekapData();
+            } else if (tabId === 'editor') {
+                document.getElementById('view-editor').classList.remove('hidden');
+                renderEditorList();
+            } else {
+                const el = document.getElementById(`view-${tabId}`);
+                if (el) el.classList.remove('hidden');
+                if (tabId === 'latihan') renderQuiz();
+                if (tabId === 'kuis') renderTrueFalse();
+            }
+
+            renderNavigation();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function submitAttendanceAndStart() {
+            const name = document.getElementById('studentNameInput').value.trim();
+            const className = document.getElementById('studentClassInput').value.trim();
+            
+            if (!name || !className) {
+                alert("Silakan isi nama dan kelas terlebih dahulu sebelum melanjutkan.");
+                return;
+            }
+
+            attendanceList.unshift({ name, className, time: new Date().toLocaleTimeString() });
+            document.getElementById('attendanceSuccessMsg').classList.remove('hidden');
+            
+            setTimeout(() => {
+                document.getElementById('attendanceSuccessMsg').classList.add('hidden');
+                unlockAndNext(0); // Proceed to Bab 1 (Mengenal)
+            }, 1200);
+        }
+
+        function renderQuiz() {
+            const container = document.getElementById('quizBox');
+            if (currentQuizIndex >= quizQuestions.length) {
+                container.innerHTML = `
+                    <div class="p-8 rounded-3xl bg-orange-50 border-2 border-orange-400 text-center space-y-4 shadow-md">
+                        <div class="w-16 h-16 rounded-2xl bg-orange-600 text-white text-3xl flex items-center justify-center mx-auto shadow-lg">🎉</div>
+                        <h3 class="text-2xl font-black text-orange-950">Kuis Pilihan Ganda Selesai!</h3>
+                        <p class="text-slate-900 text-base font-black">Skor akhir kamu: <span class="font-black text-orange-700 text-xl">${score} / ${quizQuestions.length}</span></p>
+                        <button onclick="resetQuiz()" class="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm transition-colors shadow-lg border border-orange-500">Ulangi Latihan</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const q = quizQuestions[currentQuizIndex];
+            let html = `
+                <div class="space-y-4">
+                    <span class="text-xs font-black text-orange-800 uppercase tracking-wider">Pertanyaan ${currentQuizIndex + 1} dari ${quizQuestions.length}</span>
+                    <p class="font-black text-slate-950 text-lg">${q.question}</p>
+                    <div class="space-y-3">
+            `;
+
+            q.options.forEach((opt, idx) => {
+                html += `
+                    <button onclick="answerQuiz(${idx})" class="w-full text-left p-4 rounded-2xl bg-slate-50 hover:bg-orange-100 border-2 border-slate-300 hover:border-orange-500 text-slate-950 text-sm font-bold transition-all flex items-center justify-between group shadow-sm">
+                        <span><span class="inline-block w-6 h-6 rounded-xl bg-slate-200 text-slate-900 text-center font-black text-xs leading-6 mr-3 group-hover:bg-orange-600 group-hover:text-white transition-colors shadow-sm">${String.fromCharCode(65 + idx)}</span> ${opt}</span>
+                        <i class="fa-solid fa-chevron-right text-slate-400 group-hover:text-orange-600"></i>
+                    </button>
+                `;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+        }
+
+        function answerQuiz(selectedIdx) {
+            const q = quizQuestions[currentQuizIndex];
+            const isCorrect = selectedIdx === q.correct;
+            const container = document.getElementById('quizBox');
+
+            if (isCorrect) score++;
+            document.getElementById('quizScoreBadge').innerText = `Skor: ${score} / ${quizQuestions.length}`;
+
+            container.innerHTML = `
+                <div class="p-6 rounded-3xl ${isCorrect ? 'bg-emerald-100 border-emerald-400 text-emerald-950' : 'bg-rose-100 border-rose-400 text-rose-950'} border-2 space-y-4 shadow-md">
+                    <div class="flex items-center space-x-3">
+                        <i class="fa-solid ${isCorrect ? 'fa-circle-check text-emerald-700 text-2xl' : 'fa-circle-xmark text-rose-700 text-2xl'}"></i>
+                        <div>
+                            <h4 class="font-black text-base">${isCorrect ? 'Jawaban Benar!' : 'Jawaban Kurang Tepat'}</h4>
+                            <p class="text-xs mt-0.5 font-bold opacity-90">${q.explanation}</p>
+                        </div>
+                    </div>
+                    <button onclick="nextQuiz()" class="px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-black rounded-2xl text-sm transition-colors shadow-lg border border-orange-500">Pertanyaan Selanjutnya →</button>
+                </div>
+            `;
+        }
+
+        function nextQuiz() {
+            currentQuizIndex++;
+            renderQuiz();
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            score = 0;
+            document.getElementById('quizScoreBadge').innerText = `Skor: 0 / ${quizQuestions.length}`;
+            renderQuiz();
+        }
+
+        function renderTrueFalse() {
+            const container = document.getElementById('trueFalseContainer');
+            let html = '';
+            trueFalseQuestions.forEach((item, index) => {
+                html += `
+                    <div class="p-5 rounded-3xl bg-slate-50 border-2 border-slate-300 space-y-3 shadow-md">
+                        <div class="flex items-start justify-between">
+                            <span class="text-sm font-black text-slate-950">${index + 1}. ${item.text}</span>
+                        </div>
+                        <div class="flex items-center space-x-3" id="tf-box-${index}">
+                            <button onclick="answerTF(${index}, true)" class="px-4 py-2 bg-white hover:bg-emerald-50 border-2 border-slate-300 hover:border-emerald-500 text-slate-950 font-black rounded-2xl text-xs transition-all shadow-sm">✅ Benar</button>
+                            <button onclick="answerTF(${index}, false)" class="px-4 py-2 bg-white hover:bg-rose-50 border-2 border-slate-300 hover:border-rose-500 text-slate-950 font-black rounded-2xl text-xs transition-all shadow-sm">❌ Salah</button>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        function answerTF(index, userAns) {
+            const item = trueFalseQuestions[index];
+            const isCorrect = userAns === item.answer;
+            const box = document.getElementById(`tf-box-${index}`);
+            
+            if (isCorrect) tfScore++;
+            document.getElementById('trueFalseScoreBadge').innerText = `Skor TF: ${tfScore} / ${trueFalseQuestions.length}`;
+
+            box.innerHTML = `
+                <div class="text-xs font-black ${isCorrect ? 'text-emerald-950 bg-emerald-100 border-emerald-400' : 'text-rose-950 bg-rose-100 border-rose-400'} p-3 rounded-2xl border-2 w-full flex items-center justify-between shadow-sm">
+                    <span><i class="fa-solid ${isCorrect ? 'fa-check' : 'fa-xmark'} mr-1"></i> ${isCorrect ? 'Jawaban Benar!' : 'Kurang Tepat.'} ${item.explanation}</span>
+                </div>
+            `;
+        }
+
+        function saveStoryTugas() {
+            const val = document.getElementById('storyTugasInput').value.trim();
+            if (!val) {
+                alert("Silakan tuliskan cerita atau ringkasanmu terlebih dahulu.");
+                return;
+            }
+            document.getElementById('tugasSuccess').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('tugasSuccess').classList.add('hidden');
+            }, 4000);
+        }
+
+        function saveReflection() {
+            const val = document.getElementById('reflectionInput').value.trim();
+            const studentName = document.getElementById('studentNameInput').value.trim() || "Siswa Cah Kediri";
+            if (!val) {
+                alert("Silakan tuliskan refleksi terlebih dahulu.");
+                return;
+            }
+            reflectionList.unshift({ name: studentName, text: val, time: new Date().toLocaleTimeString() });
+            document.getElementById('reflectionSuccess').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('reflectionSuccess').classList.add('hidden');
+                switchTab('rekap');
+            }, 1500);
+        }
+
+        function renderRekapData() {
+            const attContainer = document.getElementById('rekapAttendanceList');
+            if (attendanceList.length === 0) {
+                attContainer.innerHTML = `<p class="text-xs text-slate-600 italic">Belum ada siswa yang absen.</p>`;
+            } else {
+                let html = '';
+                attendanceList.forEach((item, idx) => {
+                    html += `
+                        <div class="p-3 bg-white rounded-2xl border-2 border-orange-300 text-xs flex justify-between items-center shadow-sm">
+                            <div>
+                                <span class="font-black text-orange-950">${idx + 1}. ${item.name}</span>
+                                <span class="text-slate-700 font-bold ml-2">(${item.className})</span>
+                            </div>
+                            <span class="text-slate-600 font-bold"><i class="fa-regular fa-clock mr-1"></i>${item.time}</span>
+                        </div>
+                    `;
+                });
+                attContainer.innerHTML = html;
+            }
+
+            const refContainer = document.getElementById('rekapReflectionList');
+            if (reflectionList.length === 0) {
+                refContainer.innerHTML = `<p class="text-xs text-slate-600 italic">Belum ada catatan refleksi yang disimpan.</p>`;
+            } else {
+                let html = '';
+                reflectionList.forEach((item, idx) => {
+                    html += `
+                        <div class="p-4 bg-white rounded-2xl border-2 border-sky-300 text-xs space-y-2 shadow-sm">
+                            <div class="flex justify-between font-black text-sky-950">
+                                <span><i class="fa-solid fa-user-graduate mr-1"></i> ${item.name}</span>
+                                <span class="text-slate-600 font-bold"><i class="fa-regular fa-clock mr-1"></i>${item.time || 'Baru saja'}</span>
+                            </div>
+                            <p class="text-slate-900 italic font-medium">"${item.text}"</p>
+                        </div>
+                    `;
+                });
+                refContainer.innerHTML = html;
+            }
+        }
+
+        function addNewChapter() {
+            const title = document.getElementById('editChapTitle').value.trim();
+            const icon = document.getElementById('editChapIcon').value.trim() || 'fa-book';
+            const subtitle = document.getElementById('editChapSubtitle').value.trim() || 'Materi Tambahan';
+            const content = document.getElementById('editChapContent').value.trim();
+
+            if (!title || !content) {
+                alert("Judul dan isi materi tidak boleh kosong.");
+                return;
+            }
+
+            chapters.push({
+                id: 'chap_' + Date.now(),
+                title: title,
+                icon: icon,
+                color: 'text-orange-700',
+                subtitle: subtitle,
+                content: `<div class="space-y-4 text-slate-900 font-medium">${content}</div>`
+            });
+
+            document.getElementById('editChapTitle').value = '';
+            document.getElementById('editChapIcon').value = '';
+            document.getElementById('editChapSubtitle').value = '';
+            document.getElementById('editChapContent').value = '';
+
+            renderChaptersContainer();
+            renderNavigation();
+            renderEditorList();
+            alert("Bab materi baru berhasil ditambahkan!");
+        }
+
+        function addNewQuizQuestion() {
+            const qText = document.getElementById('newQuizQ').value.trim();
+            const optA = document.getElementById('newQuizA').value.trim();
+            const optB = document.getElementById('newQuizB').value.trim();
+            const optC = document.getElementById('newQuizC').value.trim();
+            const optD = document.getElementById('newQuizD').value.trim();
+            const correctIdx = parseInt(document.getElementById('newQuizCorrect').value);
+            const expText = document.getElementById('newQuizExp').value.trim() || "Jawaban benar berdasarkan materi.";
+
+            if (!qText || !optA || !optB || !optC || !optD) {
+                alert("Mohon lengkapi pertanyaan dan pilihan ganda.");
+                return;
+            }
+
+            quizQuestions.push({
+                question: qText,
+                options: [optA, optB, optC, optD],
+                correct: correctIdx,
+                explanation: expText
+            });
+
+            document.getElementById('newQuizQ').value = '';
+            document.getElementById('newQuizA').value = '';
+            document.getElementById('newQuizB').value = '';
+            document.getElementById('newQuizC').value = '';
+            document.getElementById('newQuizD').value = '';
+            document.getElementById('newQuizExp').value = '';
+
+            renderEditorList();
+            alert("Soal kuis baru berhasil ditambahkan!");
+        }
+
+        function renderEditorList() {
+            const listEl = document.getElementById('editorContentList');
+            let html = '';
+            chapters.forEach((chap, idx) => {
+                if (chap.id === 'beranda') return;
+                html += `
+                    <div class="p-3 bg-white rounded-2xl border-2 border-slate-300 flex items-center justify-between text-xs font-bold shadow-sm">
+                        <div>
+                            <span class="text-orange-800 font-black">[${chap.subtitle}]</span> ${chap.title}
+                        </div>
+                        <button onclick="deleteChapter(${idx})" class="px-2.5 py-1 bg-rose-100 text-rose-900 hover:bg-rose-200 rounded-xl font-black border border-rose-300 shadow-sm">Hapus Bab</button>
+                    </div>
+                `;
+            });
+            quizQuestions.forEach((q, idx) => {
+                html += `
+                    <div class="p-3 bg-white rounded-2xl border-2 border-slate-300 flex items-center justify-between text-xs font-bold shadow-sm">
+                        <div>
+                            <span class="text-amber-800 font-black">[Kuis #${idx + 1}]</span> ${q.question}
+                        </div>
+                        <button onclick="deleteQuiz(${idx})" class="px-2.5 py-1 bg-rose-100 text-rose-900 hover:bg-rose-200 rounded-xl font-black border border-rose-300 shadow-sm">Hapus Soal</button>
+                    </div>
+                `;
+            });
+            listEl.innerHTML = html;
+        }
+
+        function deleteChapter(idx) {
+            if (confirm("Yakin ingin menghapus bab materi ini?")) {
+                chapters.splice(idx, 1);
+                renderChaptersContainer();
+                renderNavigation();
+                renderEditorList();
+            }
+        }
+
+        function deleteQuiz(idx) {
+            if (confirm("Yakin ingin menghapus soal ini?")) {
+                quizQuestions.splice(idx, 1);
+                renderEditorList();
+            }
+        }
+
+        function exportDataPDF() {
+            let content = "=== REKAP DATA E-MODUL CAH KEDIRI LEGENDA LEMBU SURO ===\n\n";
+            content += "--- DAFTAR ABSENSI SISWA ---\n";
+            attendanceList.forEach((a, i) => {
+                content += `${i + 1}. Nama: ${a.name} | Kelas: ${a.className} | Waktu: ${a.time}\n`;
+            });
+            content += "\n--- DAFTAR REFLEKSI SISWA ---\n";
+            reflectionList.forEach((r, i) => {
+                content += `${i + 1}. Nama: ${r.name}\nRefleksi: "${r.text}"\n\n`;
+            });
+
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Rekap_Data_E_Modul_Lembu_Suro.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            alert("Data berhasil diunduh sebagai dokumen rekap penting!");
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            updateWhatsAppLinks();
+            renderNavigation();
+            renderChaptersContainer();
+        }
+    </script>
+</body>
+</html>
